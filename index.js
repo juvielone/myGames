@@ -6,9 +6,11 @@ var gamePattern = [];
 
 var level = 0;   
 var start = true;
+$(".cons").hide();
 
 // Random Functions
 function nextSequence(){
+    $(".cons").hide();
     //Stack up pattern when next sequence is called
     userClickedPattern = [];
 
@@ -85,39 +87,61 @@ function playSound(name){
 
                 setTimeout(function(){
                         nextSequence();
-                }, 1000);
+                    }, 1000);
+                }
+                
+                
+                
+            }else{
+                $("body").addClass("game-over");
+                
+                setTimeout(function(){
+                    $("body").removeClass("game-over");
+                }, 200)
+
+
+                $(".cons").show();
+                // ============================
+                // cons invisible
+                // $(".cons").removeClass("invisible");    
+                
+                // removing invisibility = seen 
+                // setTimeout(function(){
+                //     $(".cons").removeClass("invisible");
+                // }, 2000)
+
+                // adding again the class = inbox
+                // setTimeout(function(){
+                //     $(".cons").addClass("visible");
+                // }, 4000)
+                
+                
+                $("#level-title").text("Game Over, Press Any Key to Restart");
+                playSound("wrong");
+                startOver();
+                
+    
+                    
+                }
+                
             }
+            
+            
+            
+            function startOver(){
+                level = 0;
+                gamePattern=[];
+                start = true;
+                
+                
+            }
+            
+            
 
 
-
-        }else{
-            $("body").addClass("game-over");
-
-            setTimeout(function(){
-                $("body").removeClass("game-over");
-            }, 200)
-
-            $("#level-title").text("Game Over, Press Any Key to Restart");
-            playSound("wrong");
-            startOver();
-        }
-
-    }
-
-
-
-function startOver(){
-    level = 0;
-    gamePattern=[];
-    start = true;
-}
-
-
-
-
+            
     
     
     
-    
-    
+
 

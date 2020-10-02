@@ -10,6 +10,11 @@ body {
   color: #FEF2BF;
 }
 
+#level-title h1{
+  font-family: 'Press Start 2P', cursive;
+
+}
+
 .container {
   display: block;
   width: 50%;
@@ -50,4 +55,25 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+
+.cons{
+  padding: 80px;
+  margin: 20px;
+  width: 300px;
+  background-image: url('scroll.png');
+  position: relative;
+  bottom: 620px;
+  right: 40px;
+
+  
+}
+
+
+
+
+
+.invisible{
+  display: none;
 }
