@@ -8,9 +8,12 @@ var level = 0;
 var start = true;
 $(".cons").hide();
 
+
 // Random Functions
 function nextSequence(){
+    
     $(".cons").hide();
+    
     //Stack up pattern when next sequence is called
     userClickedPattern = [];
 
@@ -60,7 +63,6 @@ function playSound(name){
         
     }
     
-
     
     //Detecting keypress
     $("body").on("keydown",function(){
@@ -73,6 +75,8 @@ function playSound(name){
         }        
         
     })
+
+
 
     
     
@@ -101,22 +105,9 @@ function playSound(name){
 
 
                 $(".cons").show();
-                // ============================
-                // cons invisible
-                // $(".cons").removeClass("invisible");    
+            
                 
-                // removing invisibility = seen 
-                // setTimeout(function(){
-                //     $(".cons").removeClass("invisible");
-                // }, 2000)
-
-                // adding again the class = inbox
-                // setTimeout(function(){
-                //     $(".cons").addClass("visible");
-                // }, 4000)
-                
-                
-                $("#level-title").text("Game Over, Press Any Key to Restart");
+                $("#level-title").text("Game Over, Press Any Key/Button to Restart");
                 playSound("wrong");
                 startOver();
                 
@@ -135,8 +126,17 @@ function playSound(name){
                 
                 
             }
-            
-            
+
+
+
+            $(".btn-mobile").on("click",function(){
+                if(start){
+                    nextSequence();
+                    start=false;
+        
+        
+                }      
+            })
 
 
             
